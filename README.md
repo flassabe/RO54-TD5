@@ -71,10 +71,3 @@ Each output file has 2 sections:
    - mesh x and y indices, mesh value (as computed in `landuse_computation`)
    
 It is implemented in `landuse.cpp`.
-
-## Upload your contribution
-
-You must upload your work in a new branch on the git repository. Code, and my data files shall to be sufficient to build your results.
-
-The deadline is May, 28th 2021, 23:59 GMT+02.
-
