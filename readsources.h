@@ -22,12 +22,6 @@ public:
   GDALDatasetWrapper &operator=(GDALDatasetWrapper &&other);
 };
 
-/*!
- * \function readfiles imports the buildings from files (one per landuse type)
- * \param landuse_sources maps landuse text descriptors ("residential", "school", etc.) to the corresponding OSM files
- * \return a map associating landuse text descriptors with the resulting GDALDatasets after reading the source file
- * The GDALDatasets are returned in GDALDatasetWrappers to ensure their correct lifecycle.
- */
 std::map<std::string, GDALDatasetWrapper> readfiles(const std::map<std::string, std::string> &landuses_sources);
 
 #endif // _READSOURCES_H_

@@ -24,13 +24,22 @@ GDALDatasetWrapper &GDALDatasetWrapper::operator=(GDALDatasetWrapper &&other) {
 }
 
 /*!
- * \function readfiles read sources files and put their GDALDatasets in wrappers indexed by landuse name
- * \param landuses_sources a map whose keys are landuse names and values are source files paths
- * \return a map whose keys are landuse names and values are the resulting GDALDatasets extracted from files
+ * \function readfiles imports the buildings from files (one per landuse type)
+ * \param landuse_sources maps landuse text descriptors ("residential", "school", etc.) to the corresponding OSM files
+ * \return a map associating landuse text descriptors with the resulting GDALDatasets after reading the source file
+ * The GDALDatasets are returned in GDALDatasetWrappers to ensure their correct lifecycle.
  */
 map<string, GDALDatasetWrapper> readfiles(const map<string, string> &landuses_sources) {
   map<string, GDALDatasetWrapper> data;
-  // TODO: your code here
+  GDALAllRegister();
+  char **options = nullptr;
+  options = CSLAddNameValue(options, "USE_CUSTOM_INDEXING", "NO");
+  for (const auto &entry: landuses_sources) { // entry has two fields named first and second: first is the landuse type, second is the source file for this source
+  // TODO: your code here: --------------------------------
+    
+  // END TODO ---------------------------------------------
+  }
+  CSLDestroy(options);
   return data;
 }
 

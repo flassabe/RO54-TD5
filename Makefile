@@ -13,3 +13,7 @@ $(APP): $(APP).cpp readsources.o conversion.o mesh.o landuse_computation.o
 
 test: test.cpp readsources.o mesh.o
 	$(CC) $(LDFLAGS) $(CCFLAGS) test.cpp -o test readsources.o mesh.o
+
+clean:
+	rm -f *.o
+	rm -f landuse
